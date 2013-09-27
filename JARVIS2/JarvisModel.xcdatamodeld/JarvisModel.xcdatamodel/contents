@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Actividad" representedClassName="Actividad" syncable="YES">
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duracion" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="identificador" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="incremento" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="inicio" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="proyecto" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Proyecto" syncable="YES"/>
+        <relationship name="wbs" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Wbs" syncable="YES"/>
+    </entity>
+    <entity name="Proyecto" syncable="YES">
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identificador" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Usuario" representedClassName="Usuario" syncable="YES">
+        <attribute name="apellidoMaterno" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="apellidoPaterno" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identificador" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="actividades" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Actividad" syncable="YES"/>
+    </entity>
+    <entity name="Wbs" representedClassName="Wbs" syncable="YES">
+        <attribute name="actividad" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descripcion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="identificador" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wbs" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Actividad" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Proyecto" positionX="160" positionY="192" width="128" height="75"/>
+        <element name="Usuario" positionX="-252" positionY="-360" width="128" height="135"/>
+        <element name="Wbs" positionX="18" positionY="321" width="128" height="105"/>
+    </elements>
+</model>
